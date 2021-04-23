@@ -1,5 +1,14 @@
 
+dnsHostPort:
+  enabled: true
+
 serviceWeb:
+  http:
+    enabled: true
+    port: 9080
+  https:
+    enabled: true
+    port: 9443
   type: NodePort
 
 persistentVolumeClaim:
@@ -29,9 +38,6 @@ persistentVolumeClaim:
 # default upstream DNS servers to use
 DNS1: "1.1.1.1"
 DNS2: "8.8.4.4"
-
-webHttp: "9080"
-webHttps: "9443"
 
 customVolumes:
   enabled: false
