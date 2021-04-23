@@ -2,8 +2,6 @@
 serviceWeb:
   type: NodePort
 
-virtualHost: pi.hole
-
 persistentVolumeClaim:
   # set to true to use pvc
   enabled: false
@@ -34,8 +32,6 @@ DNS2: "8.8.4.4"
 
 webHttp: "8080"
 webHttps: "8443"
-hostNetwork: "false"
-privileged: "false"
 
 customVolumes:
   enabled: false
