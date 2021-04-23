@@ -6,7 +6,7 @@ serviceWeb:
   http:
     enabled: false
   https:
-    port: 9443
+    port: 1443
   type: LoadBalancer
 
 persistentVolumeClaim:
@@ -36,6 +36,8 @@ persistentVolumeClaim:
 # default upstream DNS servers to use
 DNS1: "1.1.1.1"
 DNS2: "8.8.4.4"
+
+webHttps: "9443"
 
 customVolumes:
   enabled: false
