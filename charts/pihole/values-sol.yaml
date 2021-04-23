@@ -4,9 +4,10 @@ serviceDns:
 
 serviceWeb:
   http:
-    enabled: false
+    enabled: true
+    port: 9080
   https:
-    port: 1443
+    enabled: false
   type: LoadBalancer
 
 persistentVolumeClaim:
