@@ -4,10 +4,8 @@ serviceDns:
 
 serviceWeb:
   http:
-    enabled: true
-    port: 9080
+    enabled: false
   https:
-    enabled: true
     port: 9443
   type: LoadBalancer
 
