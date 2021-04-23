@@ -1,6 +1,6 @@
 
-dnsHostPort:
-  enabled: true
+serviceDns:
+  type: LoadBalancer
 
 serviceWeb:
   http:
@@ -9,7 +9,7 @@ serviceWeb:
   https:
     enabled: true
     port: 9443
-  type: NodePort
+  type: LoadBalancer
 
 persistentVolumeClaim:
   # set to true to use pvc
