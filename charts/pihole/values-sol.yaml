@@ -37,8 +37,6 @@ persistentVolumeClaim:
 DNS1: "1.1.1.1"
 DNS2: "8.8.4.4"
 
-webHttps: "9443"
-
 customVolumes:
   enabled: false
   config: {}
