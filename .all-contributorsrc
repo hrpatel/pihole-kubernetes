@@ -305,6 +305,87 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "morremeyer",
+      "name": "Morre Meyer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7683567?v=4",
+      "profile": "https://mor.re/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "johnsondnz",
+      "name": "Donald Johnson",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7608966?v=4",
+      "profile": "https://github.com/johnsondnz",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "wrmilling",
+      "name": "Winston R. Milling",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6162814?v=4",
+      "profile": "https://winston.milli.ng/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "larivierec",
+      "name": "Christopher Larivière",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3633214?v=4",
+      "profile": "https://github.com/larivierec",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "jsievenpiper",
+      "name": "Justin Sievenpiper",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1131882?v=4",
+      "profile": "https://sievenpiper.co/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "beastob",
+      "name": "beastob",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76816315?v=4",
+      "profile": "https://github.com/beastob",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "muhlba91",
+      "name": "Daniel Mühlbachler-Pietrzykowski",
+      "avatar_url": "https://avatars.githubusercontent.com/u/653739?v=4",
+      "profile": "https://niftyside.io/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "consideRatio",
+      "name": "Erik Sundell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3837114?v=4",
+      "profile": "https://github.com/consideRatio",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Ornias1993",
+      "name": "Kjeld Schouten-Lebbing",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7613738?v=4",
+      "profile": "https://github.com/Ornias1993",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

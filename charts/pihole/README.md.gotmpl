@@ -38,6 +38,9 @@ The following items can be set via `--set` flag during installation or configure
 dnsmasq:
   customDnsEntries:
     - address=/nas/192.168.178.10
+  
+  customCnameEntries:
+    - cname=foo.nas,nas
 
 persistentVolumeClaim:
   enabled: true
@@ -55,7 +58,43 @@ serviceDns:
   type: LoadBalancer
 ```
 
+## Configuring Upstream DNS Resolvers
+
+By default, `pihole-kubernetes` will configure pod DNS automatically to use Google's `8.8.8.8` nameserver for upstream
+DNS resolution. You can configure this, or opt-out of pod DNS configuration completely.
+
+### Changing The Upstream DNS Resolver
+
+For example, to use Cloudflare's resolver:
+
+```yaml
+podDnsConfig:
+  enabled: true
+  policy: "None"
+  nameservers:
+  - 127.0.0.1
+  - 1.1.1.1
+```
+
+### Disabling Pod DNS Configuration
+
+If you have other DNS policy at play (for example, when running a service mesh), you may not want to have
+`pihole-kubernetes` control this behavior. In that case, you can disable DNS configuration on `pihole` pods:
+
+```yaml
+podDnsConfig:
+  enabled: false
+```
+
 ## Upgrading
+
+### To 2.0.0
+
+This version splits the DHCP service into its own resource and puts the configuration to `serviceDhcp`.
+
+**If you have not changed any configuration for `serviceDns`, you don’t need to do anything.**
+
+If you have changed your `serviceDns` configuration, **copy** your `serviceDns` section into a new `serviceDhcp` section.
 
 ### To 1.8.22
 
@@ -94,7 +133,7 @@ Version 1.8.22 has switched from the deprecated ingress api `extensions/v1beta1`
             backend:
               service:
                 name: \{\{ $serviceName \}\}
-                port: 
+                port:
                   name: http
 ```
 to:
@@ -138,7 +177,7 @@ MetalLB 0.7.3 has a bug, where the service is not announced anymore, when the po
 
 Feel free to contribute by making a [pull request](https://github.com/MoJo2600/pihole-kubernetes/pull/new/master).
 
-Please read [Contribution Guide](CONTRIBUTING.md) for more information on how you can contribute to this Chart.
+Please read [Contribution Guide](../../CONTRIBUTING.md) for more information on how you can contribute to this Chart.
 
 
 ## Contributors ✨
@@ -191,6 +230,17 @@ Thanks goes to these wonderful people:
     <td align="center"><a href="https://github.com/c-yco"><img src="https://avatars.githubusercontent.com/u/355591?v=4" width="100px;" alt=""/><br /><sub><b>Alexander Rabenstein</b></sub></a></td>
     <td align="center"><a href="http://tibbon.com/"><img src="https://avatars.githubusercontent.com/u/82880?v=4" width="100px;" alt=""/><br /><sub><b>David Fisher</b></sub></a></td>
     <td align="center"><a href="https://github.com/utkuozdemir"><img src="https://avatars.githubusercontent.com/u/1465819?v=4" width="100px;" alt=""/><br /><sub><b>Utku Özdemir</b></sub></a></td>
+    <td align="center"><a href="https://mor.re/"><img src="https://avatars.githubusercontent.com/u/7683567?v=4" width="100px;" alt=""/><br /><sub><b>Morre Meyer</b></sub></a></td>
+    <td align="center"><a href="https://github.com/johnsondnz"><img src="https://avatars.githubusercontent.com/u/7608966?v=4" width="100px;" alt=""/><br /><sub><b>Donald Johnson</b></sub></a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://winston.milli.ng/"><img src="https://avatars.githubusercontent.com/u/6162814?v=4" width="100px;" alt=""/><br /><sub><b>Winston R. Milling</b></sub></a></td>
+    <td align="center"><a href="https://github.com/larivierec"><img src="https://avatars.githubusercontent.com/u/3633214?v=4" width="100px;" alt=""/><br /><sub><b>Christopher Larivière</b></sub></a></td>
+    <td align="center"><a href="https://sievenpiper.co/"><img src="https://avatars.githubusercontent.com/u/1131882?v=4" width="100px;" alt=""/><br /><sub><b>Justin Sievenpiper</b></sub></a></td>
+    <td align="center"><a href="https://github.com/beastob"><img src="https://avatars.githubusercontent.com/u/76816315?v=4" width="100px;" alt=""/><br /><sub><b>beastob</b></sub></a></td>
+    <td align="center"><a href="https://niftyside.io/"><img src="https://avatars.githubusercontent.com/u/653739?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Mühlbachler-Pietrzykowski</b></sub></a></td>
+    <td align="center"><a href="https://github.com/consideRatio"><img src="https://avatars.githubusercontent.com/u/3837114?v=4" width="100px;" alt=""/><br /><sub><b>Erik Sundell</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Ornias1993"><img src="https://avatars.githubusercontent.com/u/7613738?v=4" width="100px;" alt=""/><br /><sub><b>Kjeld Schouten-Lebbing</b></sub></a></td>
   </tr>
 </table>
 
