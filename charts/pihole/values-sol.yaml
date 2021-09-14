@@ -1,0 +1,46 @@
+
+serviceDns:
+  type: LoadBalancer
+
+serviceWeb:
+  http:
+    enabled: true
+    port: 9080
+  https:
+    enabled: false
+  type: LoadBalancer
+
+persistentVolumeClaim:
+  # set to true to use pvc
+  enabled: false
+  # set to true to use you own pvc
+  # existingClaim: myExistingClaim
+  annotations: {}
+
+  accessModes:
+    - ReadWriteOnce
+  size: "500Mi"
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+
+  ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
+  ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
+
+  ## subPath: "pihole"
+
+
+# default upstream DNS servers to use
+DNS1: "1.1.1.1"
+DNS2: "8.8.4.4"
+
+customVolumes:
+  enabled: false
+  config: {}
+    # any volume type can be used here
+    # hostPath:
+    #   path: "/mnt/data"

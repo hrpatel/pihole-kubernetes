@@ -197,8 +197,8 @@ topologySpreadConstraints: []
 
 affinity: {}
 
-# -- Administrator password when not using an existing secret (see below)
-adminPassword: "admin"
+# Administrator password when not using an existing secret (see below)
+# adminPassword: "admin"
 
 # -- Use an existing secret for the admin password.
 admin:
